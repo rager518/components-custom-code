@@ -10,9 +10,9 @@ export default (editor: Editor, opts: PluginOptions = {}) => {
   Components.addType('script', {
     view: {
       onRender() {
-        const { model, el } = this;
-        const isCC = model.closestType(typeCustomCode);
-        isCC && (el.innerHTML = '');
+        // const { model, el } = this;
+        // const isCC = model.closestType(typeCustomCode);
+        // isCC && (el.innerHTML = '');
       }
     },
   });
@@ -81,10 +81,10 @@ export default (editor: Editor, opts: PluginOptions = {}) => {
           let droppable = true;
 
           // Avoid rendering codes with scripts
-          if (content.indexOf('<script') >= 0 && opts.placeholderScript) {
-            el.innerHTML = opts.placeholderScript;
-            droppable = false;
-          }
+          // if (content.indexOf('<script') >= 0 && opts.placeholderScript) {
+          //   el.innerHTML = opts.placeholderScript;
+          //   droppable = false;
+          // }
 
           model.set({ droppable });
         }, 0);
